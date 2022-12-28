@@ -1,6 +1,5 @@
 // Figure 2.1: fig02_01.cpp
 // Text-printing program.
-
 #include <iostream> // enables program to output data to screen
 
 // function main begins program execution
