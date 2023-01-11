@@ -4,12 +4,16 @@
 using namespace std;
 
 int main() {
-    unsigned int counter{1};
+    unsigned int counter = 1;
 
     while (counter <= 10) {
-        cout << counter << " ";
+        cout << "[" << counter << "] ";
         ++counter;
     }
+    cout << endl;
 
+    for (int i = 1; i <= 10; ++counter) {
+        cout << "{" << i << "} ";
+    }
     cout << endl;
 }
