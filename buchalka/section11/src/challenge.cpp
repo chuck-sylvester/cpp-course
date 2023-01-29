@@ -37,10 +37,12 @@ int main() {
             case 'L':
                 getLargest(numbers);
                 break;
-            case 'C':
-                clearNumbers(numbers);
+            case 'R':
+                removeNumbers(numbers);
                 break;
-            
+            case 'C':
+                clearScreen();
+                break;            
             default:
                 break;
         }

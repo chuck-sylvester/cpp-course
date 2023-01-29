@@ -12,7 +12,8 @@ void displayMenu() {
     std::cout <<   "M - Display mean of the numbers" << std::endl;
     std::cout <<   "S - Display the smallest number" << std::endl;
     std::cout <<   "L - Display the largest number" << std::endl;
-    std::cout <<   "C - Clear numbers from list" << std::endl;
+    std::cout <<   "R - Remove all elements from list" << std::endl;
+    std::cout <<   "C - Clear screen" << std::endl;
     std::cout <<   "Q - Quit" << std::endl;
     std::cout <<   "-------------------------------" << std::endl;
     std::cout <<   "Enter your choice: ";
@@ -38,6 +39,9 @@ char getMenuChoice() {
         break;
     case 'L':
     case 'l':
+        break;
+    case 'R':
+    case 'r':
         break;
     case 'C':
     case 'c':
@@ -116,6 +120,10 @@ void getLargest(const std::vector<int> &v) {
     }
 }
 
-void clearNumbers(std::vector<int> &v) {
+void removeNumbers(std::vector<int> &v) {
     v.clear();
+}
+
+void clearScreen() {
+    std::cout << "\n\n\nFiguring out how to clear the screen... try again later\n\n\n" << std::endl;
 }

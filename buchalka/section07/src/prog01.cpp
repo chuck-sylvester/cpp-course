@@ -37,7 +37,7 @@ int main() {
     }
 
     std::cout << "----" << std::endl;
-    
+
     vowels.push_back('y');
 
     for (size_t i = 0; i < vowels.size(); i++) {
@@ -46,6 +46,16 @@ int main() {
 
     std::cout << test_scores.size() << std::endl;
     std::cout << test_scores.capacity() << std::endl;
+
+    std::cout << temperatures.size() << std::endl;
+    std::cout << temperatures.capacity() << std::endl;
+
+    for (auto temp : temperatures) {
+        std::cout << "Temperature: " << std::setw(8) << std::setprecision(5) << temp << std::endl;
+    }
+
+    std::cout << "Let's try to replace a value at one of temperature locations, e.g., (offset 1)" << std::endl;
+    std::cin >> temperatures.at(1);
 
     std::cout << temperatures.size() << std::endl;
     std::cout << temperatures.capacity() << std::endl;
