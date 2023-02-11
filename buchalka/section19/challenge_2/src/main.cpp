@@ -7,21 +7,24 @@
 #include <fstream>
 #include <iomanip>
 
+// Function prototypes
+int prepareInputFile(std::ifstream &fileName);
+
 int main() {
     std::string answerKey;
     std::string studentAnswer;
     std::string studentName;
+    int studentCount {};
+    int studentScore {};
+    int totalScore {};
+    double averageScore {};
 
     std::ifstream inputFile;
-    inputFile.open("./data/responses.txt", std::ios::in);
 
-    if (!inputFile) {
-        std::cout << "Problem opening input file\n" << std::endl;
-        std::cout << "exiting program with return code 1\n" << std::endl;
-        return 1;
+    int rc = prepareInputFile(inputFile);
+    if (rc == -1) {
+        return -1;
     }
-
-    std::cout << "Success opening input file\n" << std::endl;
 
     // read answer key into variable and display each value
     inputFile >> answerKey;
@@ -37,11 +40,33 @@ int main() {
     std::cout << "-----------------------" << std::endl;
 
     while (!inputFile.eof()) {
+        studentCount++;
         inputFile >> studentName >> studentAnswer;
-        std::cout << std::setw(18) << std::left << studentName << studentAnswer << std::endl;
+        for (int i = 0; i < 5; i++) {
+            if (studentAnswer.at(i) == answerKey.at(i)) {
+                studentScore++;
+                totalScore++;
+            }
+        }
+        std::cout << std::setw(22) << std::left << studentName << studentScore << std::endl;
+        studentScore = 0;
     }
     std::cout << "-----------------------" << std::endl;
-    std::cout << std::setw(20) << "Average score" << std::right << 3.6 << "\n" << std::endl;
+
+    averageScore = static_cast<double>(totalScore) / studentCount;
+    std::cout << std::setw(20) << "Average score" << std::right << averageScore << "\n" << std::endl;
 
     return 0;
+}
+
+int prepareInputFile(std::ifstream &fileName) {
+    fileName.open("./data/answers.txt", std::ios::in);
+
+    if (!fileName) {
+        std::cout << "Problem opening input file\n" << std::endl;
+        return -1;
+    } else {
+        std::cout << "Success opening input file\n" << std::endl;
+        return 0;
+    }
 }

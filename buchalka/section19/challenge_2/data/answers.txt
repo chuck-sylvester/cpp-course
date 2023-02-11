@@ -1,0 +1,17 @@
+ABDEC
+John        ADBCE
+Paul        ABDEC
+Ringo       CBDEC
+George      CEDBA
+Yoko        CBDBC
+Linda       ABDEC
+Catherine   CEDAB
+Patty       ABBBC
+Bono        ABDEC
+Larry       ABDEC
+Chrissy     ABDEE
+Benjamin    ABDEC
+Leah        DBDCE
+Roger       ABDCE
+Sammy       ABDEC
+Leanne      ABDEE
