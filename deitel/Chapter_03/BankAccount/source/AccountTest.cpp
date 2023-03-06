@@ -1,6 +1,6 @@
 /*
     Fig. 3.5: AccountTest.cpp
-    Creating and manipulating an Account object
+    Using a driver program to create and manipulate an Account object
     Uses a constructor to initialize the name data member
 */
 #include <iostream>
@@ -19,7 +19,7 @@ int main() {
     cout << "Initial account 2 name is: " << myAccount2.getName() << endl;
 
     // prompt for and read name
-    cout << "\nPlease enter the account name: ";
+    cout << "\nPlease enter a new name for myAccount1: ";
     string theName; 
     getline(cin, theName); // read a line of text
     myAccount1.setName(theName); // put theName in myAccount
